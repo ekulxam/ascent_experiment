@@ -2,6 +2,14 @@
   "values": [
     "ascent-experiment:sapphire_block",
     "ascent-experiment:sapphire_ore",
-    "ascent-experiment:deepslate_sapphire_ore"
+    "ascent-experiment:deepslate_sapphire_ore",
+    "ascent-experiment:blackstone_rutile_ore",
+    "ascent-experiment:basalt_rutile_ore",
+    "ascent-experiment:blood_rutile_block",
+    "ascent-experiment:aster_stone",
+    "ascent-experiment:chartium_ore",
+    "ascent-experiment:raw_chartium_block",
+    "ascent-experiment:chartium_block",
+    "ascent-experiment:chartium_bricks"
   ]
 }
