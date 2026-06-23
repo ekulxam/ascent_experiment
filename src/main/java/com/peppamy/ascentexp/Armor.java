@@ -1,5 +1,6 @@
 package com.peppamy.ascentexp;
 
+import com.peppamy.ascentexp.init.AscentExperimentItems;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -48,7 +49,7 @@ public class Armor {
         // The sound played when the armor is equipped.
         SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
         // The ingredient(s) used to repair the armor.
-        () -> Ingredient.ofItems(AscentExperiment.SAPPHIRE),
+        () -> Ingredient.ofItems(AscentExperimentItems.SAPPHIRE),
         1.5F,
         0.0F,
         // Guidite is NOT dyeable, so we will pass false.
