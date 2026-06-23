@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "ascent-experiment:block/chartium_torch"
-  }
-}

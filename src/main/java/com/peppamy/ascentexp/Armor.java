@@ -53,6 +53,7 @@ public class Armor {
         1.5F,
         0.0F,
         // Guidite is NOT dyeable, so we will pass false.
-        false);
+        false
+    );
 
 }

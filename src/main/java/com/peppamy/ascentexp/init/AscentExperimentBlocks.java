@@ -52,9 +52,9 @@ public class AscentExperimentBlocks {
             .sounds(BlockSoundGroup.METAL)
     ), true);
 
-    public static final Block CHARTIUM_TORCH = register("chartium_torch", new TorchBlock(ParticleTypes.FLAME, AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY)), false);
+    public static final Block CHARTIUM_TORCH = register("chartium_torch", new TorchBlock(AscentExperimentParticleTypes.CHARTIUM_FLAME, AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY)), false);
 
-    public static final Block CHARTIUM_WALL_TORCH = register("chartium_wall_torch", new WallTorchBlock(ParticleTypes.FLAME, AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY)), false);
+    public static final Block CHARTIUM_WALL_TORCH = register("chartium_wall_torch", new WallTorchBlock(AscentExperimentParticleTypes.CHARTIUM_FLAME, AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY)), false);
 
     public static <T extends Block> T register(String name, T block, boolean hasDefaultItem) {
         Registry.register(Registries.BLOCK, AscentExperiment.id(name), block);

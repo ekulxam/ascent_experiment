@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0,
+      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -45,8 +45,7 @@
           ]
         }
       ],
-      "rolls": 1
+      "rolls": 1.0
     }
-  ],
-  "random_sequence": "ascent-experiment:blocks/deepslate_sapphire_ore"
+  ]
 }
