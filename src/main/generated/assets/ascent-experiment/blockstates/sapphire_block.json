@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ascent-experiment:block/sapphire_block"
+    }
+  }
+}
