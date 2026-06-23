@@ -11,12 +11,15 @@
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
+	"license": "ARR",
 	"icon": "assets/ascent-experiment/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"com.peppamy.ascentexp.AscentExperiment"
+		],
+		"client": [
+			"com.peppamy.ascentexp.ClientAscentExp"
 		],
 		"fabric-datagen": [
 			"com.peppamy.ascentexp.datagen.AscentExperimentDataGenerator"

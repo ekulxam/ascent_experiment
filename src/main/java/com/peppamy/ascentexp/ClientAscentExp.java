@@ -11,7 +11,6 @@ public class ClientAscentExp implements ClientModInitializer
     public void onInitializeClient()
     {
         BlockRenderLayerMap.INSTANCE.putBlock(AscentExperiment.COMPASSION_PLANT, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(AscentExperiment.CHARTIUM_TORCH, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(AscentExperiment.CHARTIUM_WALL_TORCH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), AscentExperiment.CHARTIUM_TORCH, AscentExperiment.CHARTIUM_WALL_TORCH);
     }
 }

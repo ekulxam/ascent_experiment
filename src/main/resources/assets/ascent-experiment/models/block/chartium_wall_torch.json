@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_torch_wall",
   "textures": {
-    "torch": "ascent_experiment:block/chartium_torch"
+    "torch": "ascent-experiment:block/chartium_torch"
   }
 }

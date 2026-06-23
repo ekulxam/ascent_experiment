@@ -16,7 +16,10 @@ public class AscentExperimentModelGenerator extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
+        blockStateModelGenerator.registerSimpleCubeAll(AscentExperiment.SAPPHIRE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(AscentExperiment.DEEPSLATE_SAPPHIRE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(AscentExperiment.SAPPHIRE_BLOCK);
+        blockStateModelGenerator.registerTorch(AscentExperiment.CHARTIUM_TORCH, AscentExperiment.CHARTIUM_WALL_TORCH);
     }
 
     @Override

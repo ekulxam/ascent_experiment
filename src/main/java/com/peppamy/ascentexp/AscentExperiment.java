@@ -101,11 +101,11 @@ public class AscentExperiment implements ModInitializer {
 		.sounds(BlockSoundGroup.METAL)
 	), true);
 
-	public static final Item CHARTIUM_TORCH_ITEM = register("chartium_torch", new VerticallyAttachableBlockItem(AscentExperiment.CHARTIUM_TORCH, AscentExperiment.CHARTIUM_WALL_TORCH, new Item.Settings(), Direction.DOWN));
-
 	public static final Block CHARTIUM_TORCH = register("chartium_torch", new TorchBlock(ParticleTypes.FLAME, AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY)), false);
 
-	public static final Block CHARTIUM_WALL_TORCH = register("chartium_torch", new WallTorchBlock(ParticleTypes.FLAME, AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY)), false);
+	public static final Block CHARTIUM_WALL_TORCH = register("chartium_wall_torch", new WallTorchBlock(ParticleTypes.FLAME, AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY)), false);
+
+	public static final Item CHARTIUM_TORCH_ITEM = register("chartium_torch", new VerticallyAttachableBlockItem(AscentExperiment.CHARTIUM_TORCH, AscentExperiment.CHARTIUM_WALL_TORCH, new Item.Settings(), Direction.DOWN));
 
 	public static final TagKey<Item> REPAIRS_SAPPHIRE_ARMOR = TagKey.of(Registries.ITEM.getKey(), Identifier.of(MOD_ID, "repairs_sapphire_armor"));
 
