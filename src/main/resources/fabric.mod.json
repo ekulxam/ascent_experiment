@@ -19,7 +19,7 @@
 			"com.peppamy.ascentexp.AscentExperiment"
 		],
 		"client": [
-			"com.peppamy.ascentexp.ClientAscentExp"
+          "com.peppamy.ascentexp.AscentExperimentClient"
 		],
 		"fabric-datagen": [
 			"com.peppamy.ascentexp.datagen.AscentExperimentDataGenerator"

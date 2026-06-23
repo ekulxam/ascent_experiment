@@ -1,7 +1,7 @@
 package com.peppamy.ascentexp.block;
 
 import com.mojang.serialization.MapCodec;
-import com.peppamy.ascentexp.AscentExperiment;
+import com.peppamy.ascentexp.init.AscentExperimentItems;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.server.world.ServerWorld;
@@ -53,7 +53,7 @@ public class AeremoneBlock extends CropBlock implements Fertilizable
     @Override
     protected ItemConvertible getSeedsItem()
     {
-        return AscentExperiment.COMPASSION_FRUIT;
+        return AscentExperimentItems.COMPASSION_FRUIT;
     }
 
     @Override
