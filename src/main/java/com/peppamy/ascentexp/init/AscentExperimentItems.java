@@ -2,6 +2,9 @@ package com.peppamy.ascentexp.init;
 
 import com.peppamy.ascentexp.item.ArmorMaterials;
 import com.peppamy.ascentexp.AscentExperiment;
+import com.peppamy.ascentexp.item.ArmorSettingsWithAttribute;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.AttributeModifiersComponent;
 import net.minecraft.component.type.FoodComponent;
@@ -13,6 +16,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.Direction;
 
 public class AscentExperimentItems {
@@ -55,31 +59,32 @@ public class AscentExperimentItems {
         new ArmorItem(
             ArmorMaterials.BLOOD_RUTILE,
             ArmorItem.Type.HELMET,
-            new Item.Settings().maxDamage(198)
-                               .attributeModifiers(addMaxHealthModifier(1, EquipmentSlot.HEAD))
+            new ArmorSettingsWithAttribute(addMaxHealthModifier(1, EquipmentSlot.HEAD))
+                .maxDamage(198)
         ));
     public static final Item BLOOD_RUTILE_CHESTPLATE = register(
         "blood_rutile_chestplate",
-        new ArmorItem(ArmorMaterials.BLOOD_RUTILE,
-                      ArmorItem.Type.CHESTPLATE,
-                      new Item.Settings().maxDamage(288)
-                                         .attributeModifiers(addMaxHealthModifier(2, EquipmentSlot.CHEST))
+        new ArmorItem(
+            ArmorMaterials.BLOOD_RUTILE,
+            ArmorItem.Type.CHESTPLATE,
+            new ArmorSettingsWithAttribute(addMaxHealthModifier(2, EquipmentSlot.CHEST))
+                .maxDamage(288)
         ));
     public static final Item BLOOD_RUTILE_LEGGINGS = register(
         "blood_rutile_leggings",
         new ArmorItem(
             ArmorMaterials.BLOOD_RUTILE,
             ArmorItem.Type.LEGGINGS,
-            new Item.Settings().maxDamage(270)
-                               .attributeModifiers(addMaxHealthModifier(2, EquipmentSlot.LEGS))
+            new ArmorSettingsWithAttribute(addMaxHealthModifier(2, EquipmentSlot.LEGS))
+                .maxDamage(270)
         ));
     public static final Item BLOOD_RUTILE_BOOTS = register(
         "blood_rutile_boots",
         new ArmorItem(
             ArmorMaterials.BLOOD_RUTILE,
             ArmorItem.Type.BOOTS,
-            new Item.Settings().maxDamage(234)
-                               .attributeModifiers(addMaxHealthModifier(1, EquipmentSlot.FEET))
+            new ArmorSettingsWithAttribute(addMaxHealthModifier(1, EquipmentSlot.FEET))
+                .maxDamage(234)
         ));
 
     public static final Item RAW_CHARTIUM = register("raw_chartium", new Item(new Item.Settings()));
@@ -99,10 +104,23 @@ public class AscentExperimentItems {
 
     public static final Item COMPASSION_BOTTLE = register("compassion_bottle", new Item(new Item.Settings()));
 
+    @SuppressWarnings("unused")
     public static final Item AEREMONE_BULB = register("aeremone_bulb", new AliasedBlockItem(AscentExperimentBlocks.AEREMONE, new Item.Settings().food(AscentExperimentItems.AERO_FOOD)));
 
     public static final Item CHARTIUM_TORCH_ITEM = register("chartium_torch", new VerticallyAttachableBlockItem(AscentExperimentBlocks.CHARTIUM_TORCH, AscentExperimentBlocks.CHARTIUM_WALL_TORCH, new Item.Settings(), Direction.DOWN));
 
+    public static final ItemGroup ASCENT_EXPERIMENT_GROUP = FabricItemGroup.builder()
+            .icon(CHARTIUM_TORCH_ITEM::getDefaultStack)
+            .displayName(Text.translatable("itemGroup.ascent-experiment"))
+            .entries((displayContext, entries) -> {
+                entries.addAll(
+                        Registries.ITEM.streamEntries()
+                                .filter(reference -> reference.registryKey().getValue().getNamespace().equals(AscentExperiment.MOD_ID))
+                                .map(reference -> reference.value().getDefaultStack())
+                                .toList()
+                );
+            })
+            .build();
 
     public static <T extends Item> T register(String name, T item)
     {
@@ -115,16 +133,18 @@ public class AscentExperimentItems {
 
     private static AttributeModifiersComponent addMaxHealthModifier(double hpIncrease, EquipmentSlot slot) {
         return AttributeModifiersComponent.builder()
-                                          .add(EntityAttributes.GENERIC_MAX_HEALTH,
+                                          .add(
+                                               EntityAttributes.GENERIC_MAX_HEALTH,
                                                new EntityAttributeModifier(
                                                    AscentExperiment.id("armor.hpincrease." + slot.getName()),
                                                    hpIncrease, EntityAttributeModifier.Operation.ADD_VALUE),
-                                               AttributeModifierSlot.ARMOR)
+                                               AttributeModifierSlot.forEquipmentSlot(slot)
+                                          )
                                           .build();
     }
 
     public static void init()
     {
-        // NO-OP
+        Registry.register(Registries.ITEM_GROUP, AscentExperiment.id("ascent_experiment_group"), ASCENT_EXPERIMENT_GROUP);
     }
 }

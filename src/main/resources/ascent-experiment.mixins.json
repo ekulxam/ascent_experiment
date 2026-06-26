@@ -3,6 +3,7 @@
   "package": "com.peppamy.ascentexp.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ArmorItemMixin",
     "LivingEntityMixin"
   ],
   "injectors": {
