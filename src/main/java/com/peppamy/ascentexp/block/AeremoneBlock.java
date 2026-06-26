@@ -2,7 +2,11 @@ package com.peppamy.ascentexp.block;
 
 import com.mojang.serialization.MapCodec;
 import com.peppamy.ascentexp.init.AscentExperimentItems;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.CropBlock;
+import net.minecraft.block.Fertilizable;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
@@ -31,7 +35,7 @@ public class AeremoneBlock extends CropBlock implements Fertilizable
     public MapCodec<AeremoneBlock> getCodec()
     {
         return CODEC;
-    };
+    }
 
     public AeremoneBlock(Settings settings)
     {
