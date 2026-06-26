@@ -46,6 +46,9 @@ public class AscentExperimentTagGenerators {
                     .add(AscentExperimentBlocks.RAW_CHARTIUM_BLOCK)
                     .add(AscentExperimentBlocks.CHARTIUM_BLOCK)
                     .add(AscentExperimentBlocks.CHARTIUM_BRICKS);
+
+            getOrCreateTagBuilder(AscentExperiment.CHARTIUM_TORCHES)
+                .add(AscentExperimentBlocks.CHARTIUM_TORCH, AscentExperimentBlocks.CHARTIUM_WALL_TORCH);
         }
     }
 

@@ -2,13 +2,14 @@ package com.peppamy.ascentexp;
 
 import com.peppamy.ascentexp.init.AscentExperimentBlocks;
 import com.peppamy.ascentexp.init.AscentExperimentItems;
-import com.peppamy.ascentexp.init.AscentExperimentParticleTypes;
+import com.peppamy.ascentexp.init.AscentExperimentOther;
+import com.peppamy.ascentexp.item.ArmorMaterials;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.block.*;
-import net.minecraft.item.*;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKey;
@@ -32,9 +33,11 @@ public class AscentExperiment implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	public static final TagKey<Item> REPAIRS_SAPPHIRE_ARMOR = TagKey.of(Registries.ITEM.getKey(), Identifier.of(MOD_ID, "repairs_sapphire_armor"));
-	public static final TagKey<Item> REPAIRS_RUTILE_ARMOR = TagKey.of(Registries.ITEM.getKey(), Identifier.of(MOD_ID, "repairs_rutile_armor"));
-	public static final TagKey<Item> REPAIRS_CHARTIUM_ARMOR = TagKey.of(Registries.ITEM.getKey(), Identifier.of(MOD_ID, "repairs_chartium_armor"));
+	public static final TagKey<Item> REPAIRS_SAPPHIRE_ARMOR = TagKey.of(Registries.ITEM.getKey(), id("repairs_sapphire_armor"));
+	public static final TagKey<Item> REPAIRS_RUTILE_ARMOR = TagKey.of(Registries.ITEM.getKey(), id("repairs_rutile_armor"));
+	public static final TagKey<Item> REPAIRS_CHARTIUM_ARMOR = TagKey.of(Registries.ITEM.getKey(), id("repairs_chartium_armor"));
+
+	public static final TagKey<Block> CHARTIUM_TORCHES = TagKey.of(Registries.BLOCK.getKey(), id("chartium_torches"));
 
 	public static class SapphireMaterial implements ToolMaterial {
 
@@ -140,7 +143,7 @@ public class AscentExperiment implements ModInitializer {
 	}
 
 
-	public static final RegistryKey<PlacedFeature> ORE_SAPPHIRE_PLACED_FEATURE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "ore_sapphire"));
+	public static final RegistryKey<PlacedFeature> ORE_SAPPHIRE_PLACED_FEATURE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, id("ore_sapphire"));
 	public static final RegistryKey<PlacedFeature> ORE_BLACKSTONE_RUTILE_PLACED_FEATURE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "ore_blackstone_rutile"));
 	public static final RegistryKey<PlacedFeature> ORE_BASALT_RUTILE_PLACED_FEATURE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "ore_basalt_rutile"));
 
@@ -151,13 +154,13 @@ public class AscentExperiment implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
-        AscentExperimentParticleTypes.init();
+        AscentExperimentOther.init();
         AscentExperimentBlocks.init();
         AscentExperimentItems.init();
 		BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD), GenerationStep.Feature.UNDERGROUND_ORES, ORE_SAPPHIRE_PLACED_FEATURE);
 		BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_NETHER), GenerationStep.Feature.UNDERGROUND_DECORATION, ORE_BLACKSTONE_RUTILE_PLACED_FEATURE);
 		BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_NETHER), GenerationStep.Feature.UNDERGROUND_DECORATION, ORE_BASALT_RUTILE_PLACED_FEATURE);
-		Armor.initialize();
+		ArmorMaterials.initialize();
 	}
 
 	public static Identifier id(String path)
