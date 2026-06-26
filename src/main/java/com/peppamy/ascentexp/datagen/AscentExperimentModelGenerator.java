@@ -30,6 +30,9 @@ public class AscentExperimentModelGenerator extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(AscentExperimentBlocks.CHARTIUM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(AscentExperimentBlocks.CHARTIUM_BRICKS);
 
+        blockStateModelGenerator.registerSimpleCubeAll(AscentExperimentBlocks.COMPASSION_LEAVES);
+        blockStateModelGenerator.registerSimpleCubeAll(AscentExperimentBlocks.FRUITING_COMPASSION_LEAVES);
+
         blockStateModelGenerator.registerTorch(AscentExperimentBlocks.CHARTIUM_TORCH, AscentExperimentBlocks.CHARTIUM_WALL_TORCH);
     }
 

@@ -15,6 +15,7 @@ public class AscentExperimentClient implements ClientModInitializer
     {
         BlockRenderLayerMap.INSTANCE.putBlock(AscentExperimentBlocks.COMPASSION_PLANT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), AscentExperimentBlocks.CHARTIUM_TORCH, AscentExperimentBlocks.CHARTIUM_WALL_TORCH);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), AscentExperimentBlocks.COMPASSION_LEAVES, AscentExperimentBlocks.FRUITING_COMPASSION_LEAVES);
 
         ParticleFactoryRegistry.getInstance().register(AscentExperimentParticleTypes.CHARTIUM_FLAME, FlameParticle.Factory::new);
     }

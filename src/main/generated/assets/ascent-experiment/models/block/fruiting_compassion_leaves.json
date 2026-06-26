@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ascent-experiment:block/fruiting_compassion_leaves"
+  }
+}

@@ -141,6 +141,8 @@ public class AscentExperiment implements ModInitializer {
 
 
 	public static final RegistryKey<PlacedFeature> ORE_SAPPHIRE_PLACED_FEATURE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "ore_sapphire"));
+	public static final RegistryKey<PlacedFeature> ORE_BLACKSTONE_RUTILE_PLACED_FEATURE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "ore_blackstone_rutile"));
+	public static final RegistryKey<PlacedFeature> ORE_BASALT_RUTILE_PLACED_FEATURE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "ore_basalt_rutile"));
 
 	@Override
 	public void onInitialize() {
@@ -153,6 +155,8 @@ public class AscentExperiment implements ModInitializer {
         AscentExperimentBlocks.init();
         AscentExperimentItems.init();
 		BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_OVERWORLD), GenerationStep.Feature.UNDERGROUND_ORES, ORE_SAPPHIRE_PLACED_FEATURE);
+		BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_NETHER), GenerationStep.Feature.UNDERGROUND_DECORATION, ORE_BLACKSTONE_RUTILE_PLACED_FEATURE);
+		BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_NETHER), GenerationStep.Feature.UNDERGROUND_DECORATION, ORE_BASALT_RUTILE_PLACED_FEATURE);
 		Armor.initialize();
 	}
 

@@ -14,14 +14,18 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
+import static net.minecraft.block.Blocks.createLeavesBlock;
+
+
+
 public class AscentExperimentBlocks {
-    public static final Block COMPASSION_PLANT = register("compassion_plant", new AeremoneBlock(
+    public static final Block COMPASSION_PLANT = register("compassion_plant", new SaplingBlock(SaplingGenerator.AZALEA,
             AbstractBlock.Settings.create()
                     .mapColor(MapColor.DARK_GREEN)
                     .noCollision()
                     .ticksRandomly()
                     .breakInstantly()
-                    .sounds(BlockSoundGroup.CROP)
+                    .sounds(BlockSoundGroup.GRASS)
                     .pistonBehavior(PistonBehavior.DESTROY)
     ), false);
 
@@ -104,6 +108,9 @@ public class AscentExperimentBlocks {
         .strength(5.0F, 6.0F)
         .instrument(NoteBlockInstrument.BASEDRUM)
     ), true);
+
+    public static final Block COMPASSION_LEAVES = register("compassion_leaves", createLeavesBlock(BlockSoundGroup.AZALEA_LEAVES), true);
+    public static final Block FRUITING_COMPASSION_LEAVES = register("fruiting_compassion_leaves", createLeavesBlock(BlockSoundGroup.AZALEA_LEAVES), true);
 
     public static final Block CHARTIUM_TORCH = register("chartium_torch", new TorchBlock(AscentExperimentParticleTypes.CHARTIUM_FLAME, AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY)), false);
 

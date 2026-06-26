@@ -46,5 +46,7 @@
   "item.ascent-experiment.chartium_chestplate": "Chartium Chestplate",
   "item.ascent-experiment.chartium_leggings": "Chartium Leggings",
   "item.ascent-experiment.chartium_boots": "Chartium Boots",
-  "item.ascent-experiment.compassion_fruit": "Compassion Fruit"
+  "item.ascent-experiment.compassion_fruit": "Compassion Fruit",
+  "block.ascent-experiment.compassion_leaves": "Compassion Leaves",
+  "block.ascent-experiment.fruiting_compassion_leaves": "Fruiting Compassion Leaves"
 }

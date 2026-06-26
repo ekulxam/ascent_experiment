@@ -2,7 +2,10 @@ package com.peppamy.ascentexp.init;
 
 import com.peppamy.ascentexp.Armor;
 import com.peppamy.ascentexp.AscentExperiment;
+import net.minecraft.block.Blocks;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.component.type.FoodComponents;
+import net.minecraft.datafixer.fix.EntityHealthFix;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -46,7 +49,7 @@ public class AscentExperimentItems {
     public static final Item BLOOD_RUTILE_AXE = register("blood_rutile_axe", new AxeItem(AscentExperiment.BloodRutileMaterial.INSTANCE, (new Item.Settings()).attributeModifiers(AxeItem.createAttributeModifiers(AscentExperiment.BloodRutileMaterial.INSTANCE, 5.0F, -3.0F))));
     public static final Item BLOOD_RUTILE_SHOVEL = register("blood_rutile_shovel", new ShovelItem(AscentExperiment.BloodRutileMaterial.INSTANCE, (new Item.Settings()).attributeModifiers(ShovelItem.createAttributeModifiers(AscentExperiment.BloodRutileMaterial.INSTANCE, 1.5F, -3.0F))));
     public static final Item BLOOD_RUTILE_HOE = register("blood_rutile_hoe", new HoeItem(AscentExperiment.BloodRutileMaterial.INSTANCE, (new Item.Settings()).attributeModifiers(HoeItem.createAttributeModifiers(AscentExperiment.BloodRutileMaterial.INSTANCE, -3.0F, 0.0F))));
-    public static final Item BLOOD_RUTILE_HELMET = register("blood_rutile_helmet", new ArmorItem(Armor.BLOOD_RUTILE, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(198) ));
+    public static final Item BLOOD_RUTILE_HELMET = register("blood_rutile_helmet", new ArmorItem(Armor.BLOOD_RUTILE, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(198).attributeModifiers()));
     public static final Item BLOOD_RUTILE_CHESTPLATE = register("blood_rutile_chestplate", new ArmorItem(Armor.BLOOD_RUTILE, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(288) ));
     public static final Item BLOOD_RUTILE_LEGGINGS = register("blood_rutile_leggings", new ArmorItem(Armor.BLOOD_RUTILE, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(270) ));
     public static final Item BLOOD_RUTILE_BOOTS = register("blood_rutile_boots", new ArmorItem(Armor.BLOOD_RUTILE, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(234) ));
@@ -66,7 +69,8 @@ public class AscentExperimentItems {
 
     public static final Item COMPASSION_FRUIT = register("compassion_fruit", COMPASSION_FOOD);
 
-    public static final Item AEREMONE_BULB = register("aeremone_bulb", new AliasedBlockItem(AscentExperimentBlocks.AEREMONE, new Item.Settings()));
+    public static final Item AEREMONE_BULB = register("aeremone_bulb", new AliasedBlockItem(AscentExperimentBlocks.AEREMONE, new Item.Settings().food(AscentExperimentItems.AERO_FOOD))
+    );
 
     public static final Item CHARTIUM_TORCH_ITEM = register("chartium_torch", new VerticallyAttachableBlockItem(AscentExperimentBlocks.CHARTIUM_TORCH, AscentExperimentBlocks.CHARTIUM_WALL_TORCH, new Item.Settings(), Direction.DOWN));
 
