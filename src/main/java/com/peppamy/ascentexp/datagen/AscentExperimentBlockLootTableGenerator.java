@@ -4,8 +4,6 @@ import com.peppamy.ascentexp.init.AscentExperimentBlocks;
 import com.peppamy.ascentexp.init.AscentExperimentItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;

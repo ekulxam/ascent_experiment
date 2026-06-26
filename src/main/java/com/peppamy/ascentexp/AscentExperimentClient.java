@@ -1,7 +1,7 @@
 package com.peppamy.ascentexp;
 
 import com.peppamy.ascentexp.init.AscentExperimentBlocks;
-import com.peppamy.ascentexp.init.AscentExperimentParticleTypes;
+import com.peppamy.ascentexp.init.AscentExperimentOther;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
@@ -17,6 +17,6 @@ public class AscentExperimentClient implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), AscentExperimentBlocks.CHARTIUM_TORCH, AscentExperimentBlocks.CHARTIUM_WALL_TORCH);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), AscentExperimentBlocks.COMPASSION_LEAVES, AscentExperimentBlocks.FRUITING_COMPASSION_LEAVES);
 
-        ParticleFactoryRegistry.getInstance().register(AscentExperimentParticleTypes.CHARTIUM_FLAME, FlameParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(AscentExperimentOther.CHARTIUM_FLAME, FlameParticle.Factory::new);
     }
 }
