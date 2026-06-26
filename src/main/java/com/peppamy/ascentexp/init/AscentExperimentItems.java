@@ -97,8 +97,7 @@ public class AscentExperimentItems {
 
     public static final Item COMPASSION_FRUIT = register("compassion_fruit", COMPASSION_FOOD);
 
-    public static final Item AEREMONE_BULB = register("aeremone_bulb", new AliasedBlockItem(AscentExperimentBlocks.AEREMONE, new Item.Settings().food(AscentExperimentItems.AERO_FOOD))
-    );
+    public static final Item AEREMONE_BULB = register("aeremone_bulb", new AliasedBlockItem(AscentExperimentBlocks.AEREMONE, new Item.Settings().food(AscentExperimentItems.AERO_FOOD)));
 
     public static final Item CHARTIUM_TORCH_ITEM = register("chartium_torch", new VerticallyAttachableBlockItem(AscentExperimentBlocks.CHARTIUM_TORCH, AscentExperimentBlocks.CHARTIUM_WALL_TORCH, new Item.Settings(), Direction.DOWN));
 
@@ -116,7 +115,7 @@ public class AscentExperimentItems {
         return AttributeModifiersComponent.builder()
                                           .add(EntityAttributes.GENERIC_MAX_HEALTH,
                                                new EntityAttributeModifier(
-                                                   AscentExperiment.id("armor.hpIncrease." + slot.asString()),
+                                                   AscentExperiment.id("armor.hpincrease." + slot.getName()),
                                                    hpIncrease, EntityAttributeModifier.Operation.ADD_VALUE),
                                                AttributeModifierSlot.ARMOR)
                                           .build();
