@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class ArmorMaterials {
+public class AscentExperimentArmorMaterials {
     public static void initialize() {}
     public static final RegistryEntry<ArmorMaterial> SAPPHIRE = registerMaterial("sapphire",
         // Defense (protection) point values for each armor piece.

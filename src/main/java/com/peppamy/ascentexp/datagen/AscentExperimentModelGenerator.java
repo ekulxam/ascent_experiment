@@ -1,6 +1,5 @@
 package com.peppamy.ascentexp.datagen;
 
-import com.peppamy.ascentexp.AscentExperiment;
 import com.peppamy.ascentexp.init.AscentExperimentBlocks;
 import com.peppamy.ascentexp.init.AscentExperimentItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -8,8 +7,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
-import net.minecraft.data.client.TextureMap;
-import org.jetbrains.annotations.ApiStatus;
 
 public class AscentExperimentModelGenerator extends FabricModelProvider {
 

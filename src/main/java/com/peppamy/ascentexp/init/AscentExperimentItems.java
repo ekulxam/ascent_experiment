@@ -2,25 +2,17 @@ package com.peppamy.ascentexp.init;
 
 import com.peppamy.ascentexp.AscentExperiment;
 import com.peppamy.ascentexp.item.ArmorSettingsWithAttribute;
+import com.peppamy.ascentexp.item.AscentExperimentArmorMaterials;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.AttributeModifiersComponent;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.VerticallyAttachableBlockItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -85,25 +77,25 @@ public class AscentExperimentItems {
         ));
     public static final Item SAPPHIRE_HELMET = register(
         "sapphire_helmet",
-        new ArmorItem(ArmorMaterials.SAPPHIRE,
+        new ArmorItem(AscentExperimentArmorMaterials.SAPPHIRE,
                       ArmorItem.Type.HELMET,
                       new Item.Settings().maxDamage(297)
         ));
     public static final Item SAPPHIRE_CHESTPLATE = register(
         "sapphire_chestplate",
-        new ArmorItem(ArmorMaterials.SAPPHIRE,
+        new ArmorItem(AscentExperimentArmorMaterials.SAPPHIRE,
                       ArmorItem.Type.CHESTPLATE,
                       new Item.Settings().maxDamage(432)
         ));
     public static final Item SAPPHIRE_LEGGINGS = register(
         "sapphire_leggings",
-        new ArmorItem(ArmorMaterials.SAPPHIRE,
+        new ArmorItem(AscentExperimentArmorMaterials.SAPPHIRE,
                       ArmorItem.Type.LEGGINGS,
                       new Item.Settings().maxDamage(405)
         ));
     public static final Item SAPPHIRE_BOOTS = register(
         "sapphire_boots",
-        new ArmorItem(ArmorMaterials.SAPPHIRE,
+        new ArmorItem(AscentExperimentArmorMaterials.SAPPHIRE,
                       ArmorItem.Type.BOOTS,
                       new Item.Settings().maxDamage(351)
         ));
@@ -153,7 +145,7 @@ public class AscentExperimentItems {
     public static final Item BLOOD_RUTILE_HELMET = register(
         "blood_rutile_helmet",
         new ArmorItem(
-            ArmorMaterials.BLOOD_RUTILE,
+            AscentExperimentArmorMaterials.BLOOD_RUTILE,
             ArmorItem.Type.HELMET,
             new ArmorSettingsWithAttribute(addMaxHealthModifier(1, EquipmentSlot.HEAD))
                 .maxDamage(198)
@@ -161,7 +153,7 @@ public class AscentExperimentItems {
     public static final Item BLOOD_RUTILE_CHESTPLATE = register(
         "blood_rutile_chestplate",
         new ArmorItem(
-            ArmorMaterials.BLOOD_RUTILE,
+            AscentExperimentArmorMaterials.BLOOD_RUTILE,
             ArmorItem.Type.CHESTPLATE,
             new ArmorSettingsWithAttribute(addMaxHealthModifier(2, EquipmentSlot.CHEST))
                 .maxDamage(288)
@@ -169,7 +161,7 @@ public class AscentExperimentItems {
     public static final Item BLOOD_RUTILE_LEGGINGS = register(
         "blood_rutile_leggings",
         new ArmorItem(
-            ArmorMaterials.BLOOD_RUTILE,
+            AscentExperimentArmorMaterials.BLOOD_RUTILE,
             ArmorItem.Type.LEGGINGS,
             new ArmorSettingsWithAttribute(addMaxHealthModifier(2, EquipmentSlot.LEGS))
                 .maxDamage(270)
@@ -177,7 +169,7 @@ public class AscentExperimentItems {
     public static final Item BLOOD_RUTILE_BOOTS = register(
         "blood_rutile_boots",
         new ArmorItem(
-            ArmorMaterials.BLOOD_RUTILE,
+            AscentExperimentArmorMaterials.BLOOD_RUTILE,
             ArmorItem.Type.BOOTS,
             new ArmorSettingsWithAttribute(addMaxHealthModifier(1, EquipmentSlot.FEET))
                 .maxDamage(234)
@@ -227,25 +219,25 @@ public class AscentExperimentItems {
         ));
     public static final Item CHARTIUM_HELMET = register(
         "chartium_helmet",
-        new ArmorItem(ArmorMaterials.CHARTIUM,
+        new ArmorItem(AscentExperimentArmorMaterials.CHARTIUM,
                       ArmorItem.Type.HELMET,
                       new Item.Settings().maxDamage(253)
         ));
     public static final Item CHARTIUM_CHESTPLATE = register(
         "chartium_chestplate",
-        new ArmorItem(ArmorMaterials.CHARTIUM,
+        new ArmorItem(AscentExperimentArmorMaterials.CHARTIUM,
                       ArmorItem.Type.CHESTPLATE,
                       new Item.Settings().maxDamage(368)
         ));
     public static final Item CHARTIUM_LEGGINGS = register(
         "chartium_leggings",
-        new ArmorItem(ArmorMaterials.CHARTIUM,
+        new ArmorItem(AscentExperimentArmorMaterials.CHARTIUM,
                       ArmorItem.Type.LEGGINGS,
                       new Item.Settings().maxDamage(345)
         ));
     public static final Item CHARTIUM_BOOTS = register(
         "chartium_boots",
-        new ArmorItem(ArmorMaterials.CHARTIUM,
+        new ArmorItem(AscentExperimentArmorMaterials.CHARTIUM,
                       ArmorItem.Type.BOOTS,
                       new Item.Settings().maxDamage(299)
         ));
@@ -268,14 +260,14 @@ public class AscentExperimentItems {
     public static final ItemGroup ASCENT_EXPERIMENT_GROUP = FabricItemGroup.builder()
             .icon(CHARTIUM_TORCH_ITEM::getDefaultStack)
             .displayName(Text.translatable("itemGroup.ascent-experiment"))
-            .entries((displayContext, entries) -> {
-                entries.addAll(
-                        Registries.ITEM.streamEntries()
-                                .filter(reference -> reference.registryKey().getValue().getNamespace().equals(AscentExperiment.MOD_ID))
-                                .map(reference -> reference.value().getDefaultStack())
-                                .toList()
-                );
-            })
+            .entries((displayContext, entries) ->
+                    entries.addAll(
+                            Registries.ITEM.streamEntries()
+                                    .filter(reference -> reference.registryKey().getValue().getNamespace().equals(AscentExperiment.MOD_ID))
+                                    .map(reference -> reference.value().getDefaultStack())
+                                    .toList()
+                    )
+            )
             .build();
 
     public static <T extends Item> T register(String name, T item) {
